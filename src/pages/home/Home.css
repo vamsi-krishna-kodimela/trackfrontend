@@ -1,0 +1,27 @@
+.home {
+  background-color: var(--primary);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  padding: 40px;
+  display: flex;
+}
+
+.section {
+  flex: 1;
+}
+
+.form {
+  flex: 1;
+  background-color: var(--background);
+  border-radius: 24px;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.form::-webkit-scrollbar {
+  display: none;
+}
