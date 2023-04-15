@@ -22,6 +22,10 @@ const AppRoutes = createBrowserRouter([
     children: [
       { path: "customer", Component: CustomerDashboard },
       { path: "agent", Component: AgentDashboard },
+      {
+        path: "*",
+        Component: PageNotFound,
+      },
     ],
   },
   {
