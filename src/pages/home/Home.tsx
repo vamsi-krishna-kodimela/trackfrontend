@@ -1,6 +1,5 @@
 import React from "react";
 import "./Home.css";
-import Login from "./components/Login";
 import { Outlet } from "react-router-dom";
 
 const Home = () => {
