@@ -1,0 +1,33 @@
+.sidebar {
+  width: 200px;
+  box-shadow: 2px 0px 4px rgba(123, 87, 223, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.menu {
+  flex: 1;
+  padding: 0px;
+  margin: 0px;
+}
+.menu-item {
+  list-style: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin: 8px 0px;
+  font-size: 14px;
+  border: 4px solid transparent;
+  font-weight: 500;
+}
+.menu-item a {
+  text-decoration: none;
+  color: var(--secondary);
+}
+.menu-item:hover {
+  background-color: var(--grey);
+}
+
+.menu-item.active {
+  border-left-color: var(--primary);
+  color: var(--primary);
+}
