@@ -3,10 +3,10 @@ import "./CreateShipment.css";
 import { FiX } from "react-icons/fi";
 import Colors from "../../../../config/colors";
 
-const CreateShipment = () => {
+const CreateShipment = ({ close }: any) => {
   return (
     <div className="create-form">
-      <div className="cancel-btn">
+      <div className="cancel-btn" onClick={close}>
         <FiX color={Colors.secondary} />
       </div>
 

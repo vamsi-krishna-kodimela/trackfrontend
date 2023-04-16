@@ -5,7 +5,7 @@ import Modal from "react-modal";
 import CreateShipment from "../create-shipment/CreateShipment";
 import { FiGrid, FiPackage } from "react-icons/fi";
 import Colors from "../../../../config/colors";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Sidebar = () => {
   const toggle = useSelector((state: any) => state.sidebar.toggle);
@@ -20,6 +20,9 @@ const Sidebar = () => {
       border: "none",
       overflow: "hidden",
     },
+  };
+  const closeCreateModal = () => {
+    setshowCreateShipment(false);
   };
   return (
     <>
@@ -46,7 +49,7 @@ const Sidebar = () => {
             </button>
           </div>
           <Modal isOpen={showCreateShipment} style={customStyles}>
-            <CreateShipment />
+            <CreateShipment close={closeCreateModal} />
           </Modal>
         </div>
       )}
