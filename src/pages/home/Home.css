@@ -5,10 +5,13 @@
   overflow: hidden;
   padding: 40px;
   display: flex;
+  gap: 24px;
 }
 
 .section {
   flex: 1;
+  background: transparent url("../../assets/truck.png") no-repeat center bottom;
+  background-size: contain;
 }
 
 .form {

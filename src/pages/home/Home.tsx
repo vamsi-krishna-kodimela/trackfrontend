@@ -16,7 +16,7 @@ const Home = () => {
       {user && <Navigate to="/dashboard" />}
 
       <div className="home">
-        <div className="section">{user?.type}</div>
+        <div className="section"></div>
         <div className="form">
           <Outlet />
         </div>
