@@ -36,7 +36,7 @@ const Sidebar = () => {
               </Link>
             </li> */}
             <li className="menu-item">
-              <Link to="/dashboard/shipments">
+              <Link to="/dashboard">
                 <FiPackage color={Colors.primary} /> Shipments
               </Link>
             </li>
