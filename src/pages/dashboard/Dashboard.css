@@ -14,4 +14,8 @@
   flex: 1;
   background-color: #f9f9fc;
   padding: 20px 40px;
+  overflow-y: auto;
+}
+.conent-wrapper::-webkit-scrollbar {
+  display: none;
 }

@@ -70,6 +70,9 @@ p {
 .bg-light {
   background-color: #ffffff;
 }
+.bg-transparent {
+  background-color: transparent;
+}
 
 .f-2 {
   font-weight: 200;

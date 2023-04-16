@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 
 const Sidebar = () => {
   const toggle = useSelector((state: any) => state.sidebar.toggle);
+  const user = useSelector((state: any) => state.auth.user);
   const [showCreateShipment, setshowCreateShipment] = useState<boolean>(false);
   const openShowCreateShipmentModal = () => {
     setshowCreateShipment(true);
@@ -35,19 +36,21 @@ const Sidebar = () => {
               </Link>
             </li>
             <li className="menu-item">
-              <Link to="/">
+              <Link to="/dashboard/shipments">
                 <FiPackage color={Colors.primary} /> My Shipments
               </Link>
             </li>
           </ul>
-          <div className="quick-actions">
-            <button
-              className="w-4 pt-1 pb-1 bg-primary light"
-              onClick={openShowCreateShipmentModal}
-            >
-              + Create Shipment
-            </button>
-          </div>
+          {user.type == "Customer" && (
+            <div className="quick-actions">
+              <button
+                className="w-4 pt-1 pb-1 bg-primary light"
+                onClick={openShowCreateShipmentModal}
+              >
+                + Create Shipment
+              </button>
+            </div>
+          )}
           <Modal isOpen={showCreateShipment} style={customStyles}>
             <CreateShipment close={closeCreateModal} />
           </Modal>

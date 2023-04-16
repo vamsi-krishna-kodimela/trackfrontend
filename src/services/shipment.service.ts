@@ -10,6 +10,26 @@ const shipmentService = {
       },
     });
   },
+  getShipments: () => {
+    const token = JSON.parse(localStorage.getItem("user")!).token;
+    return axios.get(constants.ROUTE + "/shipment", {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
+  },
+  updateStatus: (id: string, status: string) => {
+    const token = JSON.parse(localStorage.getItem("user")!).token;
+    return axios.patch(
+      constants.ROUTE + "/shipment/" + id,
+      { status },
+      {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      }
+    );
+  },
 };
 
 export default shipmentService;

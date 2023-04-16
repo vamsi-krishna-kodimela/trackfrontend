@@ -6,6 +6,7 @@ import PageNotFound from "../pages/page-not-found/PageNotFound";
 import Dashboard from "../pages/dashboard/Dashboard";
 import CustomerDashboard from "../pages/dashboard/components/customer-dashboard/CustomerDashboard";
 import AgentDashboard from "../pages/dashboard/components/agent-dashboard/AgentDashboard";
+import ShipmentListing from "../pages/dashboard/components/shipmentlisting/ShipmentListing";
 
 const AppRoutes = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ const AppRoutes = createBrowserRouter([
     children: [
       { path: "customer", Component: CustomerDashboard },
       { path: "agent", Component: AgentDashboard },
+      { path: "shipments", Component: ShipmentListing },
       {
         path: "*",
         Component: PageNotFound,
