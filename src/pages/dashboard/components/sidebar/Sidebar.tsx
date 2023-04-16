@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Sidebar.css";
 import Modal from "react-modal";
 import CreateShipment from "../create-shipment/CreateShipment";
-import { FiGrid, FiPackage } from "react-icons/fi";
+import {  FiPackage } from "react-icons/fi";
 import Colors from "../../../../config/colors";
 import { useSelector } from "react-redux";
 
