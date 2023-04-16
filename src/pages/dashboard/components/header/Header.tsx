@@ -6,11 +6,15 @@ import "./Header.css";
 
 import { useDispatch } from "react-redux";
 import { toggle } from "../../../../store/sidebar.slice";
+import { logout } from "../../../../store/auth.slice";
 
 const Header = () => {
   const dispacth = useDispatch();
   const toggleSidebar = () => {
     dispacth(toggle());
+  };
+  const logoutUser = () => {
+    dispacth(logout());
   };
   return (
     <div className="header pl-2 pr-2 pt-1 pb-1">
@@ -23,7 +27,10 @@ const Header = () => {
         <h2 className="title ml-1">{ConstString.APP_NAME}</h2>
       </div>
       <div className="actions">
-        <button className="pb-1 pt-1 pl-2 pr-2 light bg-primary outline border-primary">
+        <button
+          className="pb-1 pt-1 pl-2 pr-2 light bg-primary outline border-primary"
+          onClick={logoutUser}
+        >
           Logout
         </button>
       </div>

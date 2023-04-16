@@ -10,11 +10,11 @@ const authReducers = {
   login: (state: any, actions: any) => {
     const payload = actions.payload;
     localStorage.setItem("user", JSON.stringify(payload));
-    state = payload;
+    state.user = payload;
   },
   logout: (state: any) => {
     localStorage.removeItem("user");
-    state = null;
+    state.user = null;
   },
 };
 

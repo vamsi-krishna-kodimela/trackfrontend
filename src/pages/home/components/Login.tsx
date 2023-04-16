@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ConstString from "../../../config/cont-strings";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import authService from "../../../services/auth.service";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../../store/auth.slice";
@@ -11,31 +11,12 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const user = useSelector((state: any) => {
-    const userdata = state.auth.user;
-    return userdata;
-  });
-
   const signin = () => {
     authService.login({ email, password }).then((res: any) => {
       const data = res.data;
       dispatch(login(data));
-      if (data.type === "Delivery Agent") {
-        navigate("/dashboard/agent");
-      } else {
-        navigate("/dashboard/customer");
-      }
     });
   };
-  setTimeout(() => {
-    if (user) {
-      if (user.type === "Delivery Agent") {
-        navigate("/dashboard/agent");
-      } else {
-        navigate("/dashboard/customer");
-      }
-    }
-  }, 500);
   return (
     <>
       <h1 className="secondary mb-3">{ConstString.APP_NAME}</h1>
