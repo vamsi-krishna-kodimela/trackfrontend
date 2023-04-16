@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ConstString from "../../../config/cont-strings";
 import { Link } from "react-router-dom";
+import IAddress from "../../../interfaces/address.interface";
+import authService from "../../../services/auth.service";
 
 const SignUp = () => {
   const [user, setuser] = useState({
@@ -10,10 +12,33 @@ const SignUp = () => {
     password: "",
     type: "",
   });
+
+  const [address, setAddress] = useState<IAddress>({
+    address: "",
+    city: "",
+    state: "",
+    country: "",
+    pincode: "",
+  });
+
   const handleUserChange = (key: string, value: string) => {
     const data: any = { ...user };
     data[key] = value;
     setuser(data);
+  };
+
+  const handleAddressChange = (key: string, value: string) => {
+    const data: any = { ...address };
+    data[key] = value;
+    setAddress(data);
+  };
+
+  const registerUser = () => {
+    const payload = { ...user, address: { ...address } };
+    authService
+      .register(payload)
+      .then((data) => {})
+      .catch((err) => {});
   };
   return (
     <>
@@ -68,29 +93,42 @@ const SignUp = () => {
           type="text"
           className="mt-1 mb-2 w-4 pb-1 pt-1 pl-1 pr-1"
           placeholder="Address Line"
+          value={address.address}
+          onChange={(e) => handleAddressChange("address", e.target.value)}
         />
         <input
           type="text"
           className="mt-1 mb-2 w-4 pb-1 pt-1 pl-1 pr-1"
           placeholder="Ciy"
+          value={address.city}
+          onChange={(e) => handleAddressChange("city", e.target.value)}
         />
         <input
           type="text"
           className="mt-1 mb-2 w-4 pb-1 pt-1 pl-1 pr-1"
           placeholder="State"
+          value={address.state}
+          onChange={(e) => handleAddressChange("state", e.target.value)}
         />
         <input
           type="text"
           className="mt-1 mb-2 w-4 pb-1 pt-1 pl-1 pr-1"
           placeholder="Country"
+          value={address.country}
+          onChange={(e) => handleAddressChange("country", e.target.value)}
         />
         <input
           type="text"
           className="mt-1 mb-2 w-4 pb-1 pt-1 pl-1 pr-1"
           placeholder="Pincode"
+          value={address.pincode}
+          onChange={(e) => handleAddressChange("pincode", e.target.value)}
         />
 
-        <button className="mt-1 mb-2 w-4 pb-1 pt-1 pl-1 pr-1 light bg-primary">
+        <button
+          className="mt-1 mb-2 w-4 pb-1 pt-1 pl-1 pr-1 light bg-primary"
+          onClick={registerUser}
+        >
           Register
         </button>
         <Link to="/">

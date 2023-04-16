@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import ConstString from "../../../config/cont-strings";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import authService from "../../../services/auth.service";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { login } from "../../../store/auth.slice";
 
 const Login = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

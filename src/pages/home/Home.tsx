@@ -4,11 +4,7 @@ import { Navigate, Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Home = () => {
-  const user = useSelector((state: any) => {
-    console.log(state);
-
-    return state.auth.user;
-  });
+  const user = useSelector((state: any) => state.auth.user);
   const generateRoute = () => {
     if (user.type === "Delivery Agent") {
       return "/dashboard/agent";
