@@ -3,7 +3,6 @@ import "./CreateShipment.css";
 import { FiX } from "react-icons/fi";
 import Colors from "../../../../config/colors";
 import IAddress from "../../../../interfaces/address.interface";
-import authService from "../../../../services/auth.service";
 import shipmentService from "../../../../services/shipment.service";
 
 const CreateShipment = ({ close }: any) => {

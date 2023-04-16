@@ -1,0 +1,37 @@
+.shipment-details {
+  background-color: var(--background);
+  border-radius: 16px;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-shadow: 0px 0px 4px rgba(123, 87, 223, 0.3);
+  width: 50%;
+  height: 100%;
+  margin: auto;
+  position: relative;
+}
+.shipment-details::-webkit-scrollbar {
+  display: none;
+}
+
+.cancel-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.details {
+  border: 1px solid rgb(240, 234, 255);
+}
+.details td {
+  background-color: #f9f9fc;
+}
+.details td:first-child {
+  font-weight: 600;
+  vertical-align: top;
+  background-color: rgb(240, 234, 255);
+}

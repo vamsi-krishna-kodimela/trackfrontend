@@ -41,7 +41,7 @@ const Sidebar = () => {
               </Link>
             </li>
           </ul>
-          {user.type == "Customer" && (
+          {user.type === "Customer" && (
             <div className="quick-actions">
               <button
                 className="w-4 pt-1 pb-1 bg-primary light"

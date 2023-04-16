@@ -18,3 +18,7 @@ thead th {
 tbody tr:nth-child(even) {
   background-color: rgb(240, 234, 255);
 }
+.shipment-table td:last-child,
+.shipment-table th:last-child {
+  text-align: center;
+}
