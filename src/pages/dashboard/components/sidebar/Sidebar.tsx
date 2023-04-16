@@ -30,14 +30,14 @@ const Sidebar = () => {
       {toggle && (
         <div className="sidebar pt-2 pb-2 pl-1 pr-1">
           <ul className="menu">
-            <li className="menu-item">
+            {/* <li className="menu-item">
               <Link to="/">
                 <FiGrid color={Colors.primary} /> Dashborad
               </Link>
-            </li>
+            </li> */}
             <li className="menu-item">
               <Link to="/dashboard/shipments">
-                <FiPackage color={Colors.primary} /> My Shipments
+                <FiPackage color={Colors.primary} /> Shipments
               </Link>
             </li>
           </ul>

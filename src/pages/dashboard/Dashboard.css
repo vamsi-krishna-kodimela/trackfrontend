@@ -3,6 +3,7 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
+  background-color: #f9f9fc;
 }
 .content {
   overflow: hidden;
@@ -12,7 +13,6 @@
 }
 .conent-wrapper {
   flex: 1;
-  background-color: #f9f9fc;
   padding: 20px 40px;
   overflow-y: auto;
 }

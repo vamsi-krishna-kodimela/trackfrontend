@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import authService from "../../../services/auth.service";
 import { useDispatch } from "react-redux";
 import { login } from "../../../store/auth.slice";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -11,10 +12,15 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const signin = () => {
-    authService.login({ email, password }).then((res: any) => {
-      const data = res.data;
-      dispatch(login(data));
-    });
+    authService
+      .login({ email, password })
+      .then((res: any) => {
+        const data = res.data;
+        dispatch(login(data));
+      })
+      .catch((error) => {
+        toast.error(error.response.data);
+      });
   };
   return (
     <>

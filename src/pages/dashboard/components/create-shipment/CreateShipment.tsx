@@ -4,6 +4,7 @@ import { FiX } from "react-icons/fi";
 import Colors from "../../../../config/colors";
 import IAddress from "../../../../interfaces/address.interface";
 import shipmentService from "../../../../services/shipment.service";
+import { toast } from "react-hot-toast";
 
 const CreateShipment = ({ close }: any) => {
   const [weight, setWeight] = useState("");
@@ -60,7 +61,7 @@ const CreateShipment = ({ close }: any) => {
     setDeliveryAddress(data);
   };
 
-  const registerUser = () => {
+  const createBooking = () => {
     const payload = {
       weight: weight,
       pickupDetails: {
@@ -76,9 +77,12 @@ const CreateShipment = ({ close }: any) => {
     shipmentService
       .book(payload)
       .then((data) => {
+        toast.success("Shipment booking created!");
         close();
       })
-      .catch((err) => {});
+      .catch((err) => {
+        toast.error(err.response.data);
+      });
   };
 
   return (
@@ -225,7 +229,7 @@ const CreateShipment = ({ close }: any) => {
 
         <button
           className="mt-1 mb-2 w-4 pb-1 pt-1 pl-1 pr-1 light bg-primary"
-          onClick={registerUser}
+          onClick={createBooking}
         >
           Book Shipment
         </button>

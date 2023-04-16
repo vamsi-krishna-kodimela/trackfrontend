@@ -3,6 +3,7 @@ import ConstString from "../../../config/cont-strings";
 import { Link } from "react-router-dom";
 import IAddress from "../../../interfaces/address.interface";
 import authService from "../../../services/auth.service";
+import { toast } from "react-hot-toast";
 
 const SignUp = () => {
   const [user, setuser] = useState({
@@ -37,8 +38,12 @@ const SignUp = () => {
     const payload = { ...user, address: { ...address } };
     authService
       .register(payload)
-      .then((data) => {})
-      .catch((err) => {});
+      .then((data) => {
+        toast.success(data.data + " Please login.");
+      })
+      .catch((err) => {
+        toast.error(err.response.data);
+      });
   };
   return (
     <>
@@ -82,7 +87,7 @@ const SignUp = () => {
           onChange={(e) => handleUserChange("type", e.target.value)}
           value={user.type}
         >
-          <option value="" disabled selected>
+          <option value="" disabled>
             Select User Type
           </option>
           <option value="Customer">Customer</option>

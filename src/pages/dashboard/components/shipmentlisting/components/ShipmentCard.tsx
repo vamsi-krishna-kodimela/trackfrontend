@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./ShipmentCard.css";
 import { FiX } from "react-icons/fi";
 import Colors from "../../../../../config/colors";

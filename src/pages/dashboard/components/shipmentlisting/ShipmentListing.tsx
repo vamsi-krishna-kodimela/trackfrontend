@@ -7,6 +7,7 @@ import moment from "moment";
 import { useSelector } from "react-redux";
 import Modal from "react-modal";
 import ShipmentCard from "./components/ShipmentCard";
+import { toast } from "react-hot-toast";
 
 const ShipmentListing = () => {
   const user = useSelector((state: any) => state.auth.user);
@@ -47,10 +48,16 @@ const ShipmentListing = () => {
 
   const updateStatus = (idx: number, status: string) => {
     const shipment = shipments[idx];
-    shipmentService.updateStatus(shipment._id, status).then((res) => {
-      shipment.latestStatus = { ...res.data };
-      setShipments([...shipments]);
-    });
+    shipmentService
+      .updateStatus(shipment._id, status)
+      .then((res) => {
+        shipment.latestStatus = { ...res.data };
+        setShipments([...shipments]);
+        toast.success("Status created!");
+      })
+      .catch((err) => {
+        toast.error("Failed to update status!");
+      });
   };
 
   const getShipments = () => {

@@ -4,6 +4,7 @@ import Header from "./components/header/Header";
 import Sidebar from "./components/sidebar/Sidebar";
 import "./Dashboard.css";
 import { useSelector } from "react-redux";
+import ShipmentListing from "./components/shipmentlisting/ShipmentListing";
 
 const Dashboard = () => {
   const user = useSelector((state: any) => state.auth?.user);
@@ -15,7 +16,7 @@ const Dashboard = () => {
           <div className="content">
             <Sidebar />
             <div className="conent-wrapper">
-              <Outlet />
+              <ShipmentListing />
             </div>
           </div>
         </div>
