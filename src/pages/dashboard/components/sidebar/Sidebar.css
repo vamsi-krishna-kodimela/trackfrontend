@@ -22,6 +22,9 @@
 .menu-item a {
   text-decoration: none;
   color: var(--secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .menu-item:hover {
   background-color: var(--grey);

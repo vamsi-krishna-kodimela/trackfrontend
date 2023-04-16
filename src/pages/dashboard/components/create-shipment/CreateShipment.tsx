@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import ConstString from "../../../../config/cont-strings";
 import "./CreateShipment.css";
 import { FiX } from "react-icons/fi";
 import Colors from "../../../../config/colors";
