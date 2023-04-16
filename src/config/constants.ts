@@ -1,5 +1,5 @@
 const constants = {
-  ROUTE: "http://localhost:5000",
+  ROUTE: process.env.REACT_APP_API_URL,
 };
 
 export default constants;
