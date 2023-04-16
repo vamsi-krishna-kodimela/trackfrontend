@@ -4,9 +4,6 @@ import Login from "../pages/home/components/Login";
 import SignUp from "../pages/home/components/Signup";
 import PageNotFound from "../pages/page-not-found/PageNotFound";
 import Dashboard from "../pages/dashboard/Dashboard";
-import CustomerDashboard from "../pages/dashboard/components/customer-dashboard/CustomerDashboard";
-import AgentDashboard from "../pages/dashboard/components/agent-dashboard/AgentDashboard";
-import ShipmentListing from "../pages/dashboard/components/shipmentlisting/ShipmentListing";
 
 const AppRoutes = createBrowserRouter([
   {
